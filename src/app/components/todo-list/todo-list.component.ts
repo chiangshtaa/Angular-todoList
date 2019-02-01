@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-todo-list',
@@ -9,7 +9,11 @@ export class TodoListComponent implements OnInit {
   list:string[];
   todoItem:string;
 
-  constructor() { }
+  // @Input() list:string[];
+
+  constructor() {
+    // console.log('did ti work', this.list);
+  }
 
   ngOnInit() {
     this.todoItem = '';
@@ -25,9 +29,9 @@ export class TodoListComponent implements OnInit {
     }
   }
 
-  addItem(item) {
+  addItem() {
     console.log('add item works');
-    this.list.unshift(item);
+    this.list.unshift(this.todoItem);
     this.todoItem = '';
     return false;
   }

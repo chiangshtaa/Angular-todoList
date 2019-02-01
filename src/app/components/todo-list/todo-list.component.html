@@ -1,11 +1,10 @@
 <div>
   <div>
-    <form (submit)="addItem(item.value)">
+    <form (submit)="addItem()">
       <label for="item">Item: </label>
       <input type="text" #item [(ngModel)]="todoItem" name="item">
     </form>
   </div>
-
 
   <div>
     <ul>
